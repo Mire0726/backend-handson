@@ -1,8 +1,8 @@
 package app
 
 import (
+	"backend/app/handler"
 	"log"
-	"main/handler"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -23,10 +23,10 @@ func Serve(addr string) {
 	})
 
 	// POSTリクエストのルート
-	e.POST("/todo", handler.HandleTodoCreate)
+	e.POST("/todos", handler.HandleTodoCreate)
 	e.GET("/todos", handler.HandleGetAllTodos)
 	e.PUT("/todo", handler.HandleUpdateTodoByTitle)
-	e.DELETE("/todo/:id", handler.HandleDeleteTodo)
+	e.DELETE("/todos/:id", handler.HandleDeleteTodo)
 
 	// サーバーの起動
 	log.Printf("Server running on %s", addr)

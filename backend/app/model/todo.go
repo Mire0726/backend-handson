@@ -1,7 +1,7 @@
 package model
 
 import (
-	"db"
+	"backend/db"
 	"errors"
 	"log"
 	"time"

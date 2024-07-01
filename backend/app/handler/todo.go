@@ -1,8 +1,8 @@
 package handler
 
 import (
+	"backend/app/model"
 	"log"
-	"main/model"
 
 	"net/http"
 
