@@ -1,6 +1,7 @@
 package app
 
 import (
+	"backend/app/handler"
 	"log"
 	"net/http"
 
@@ -26,11 +27,11 @@ func Serve(addr string) {
 		return c.String(http.StatusOK, "Welcome to TodoApp!")
 	})
 
-	// // POSTリクエストのルート
-	// e.POST("/todos", handler.HandleTodoCreate)
-	// e.GET("/todos", handler.HandleGetAllTodos)
-	// e.PUT("/todo", handler.HandleUpdateTodoByTitle)
-	// e.DELETE("/todos/:id", handler.HandleDeleteTodo)
+	// POSTリクエストのルート
+	e.POST("/todos", handler.HandleTodoCreate)
+	e.GET("/todos", handler.HandleGetAllTodos)
+	e.PUT("/todo", handler.HandleUpdateTodoByTitle)
+	e.DELETE("/todos/:id", handler.HandleDeleteTodo)
 
 	// サーバーの起動
 	log.Println("Server running...")

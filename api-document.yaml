@@ -14,3 +14,20 @@ paths:
       responses:
         "200":
           description: "A list of todos."
+    post:
+      tags:
+        - todo
+      summary: "todo登録"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                title:
+                  type: "string"
+                  example: "todo1"
+      responses:
+        "201":
+          description: "todo登録完了"
